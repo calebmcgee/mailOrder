@@ -15,30 +15,34 @@
         <form novalidate>
             <label for="email">
                 <span>Please enter email address</span>
-                <input id="email" type="email" name="email" required>
+                <input autocomplete="off" id="email" type="email" name="email" required>
                 <span class="error"></span>
             </label>
-            <!--
+            
             <label for="country">
                 <span>Enter country</span>
-                <input id="country" type="text" name="country" required>
+                <input autocomplete="off" id="country" type="text" name="country" required>
+                <span class="error"></span>
             </label>
         
             <label for="postal">
                 <span>Enter postal code</span>
-                <input id="postal" type="number" name="postal" required minlength="5" min="0">
+                <input id="postal" type="number" name="postal" required min="10000" max="99999">
+                <span class="error"></span>
             </label>
         
             <label for="password">
                 <span>Enter password</span>
                 <input id="password" type="password" name="password" required minlength="8">
+                <span class="error"></span>
             </label>
         
             <label for="passwordConfirm">
                 <span>Confirm Password</span>
                 <input id="passwordConfirm" type="password" name="passwordConfirm" required>
+                <span class="error"></span>
             </label>
-        -->
+        
             <button id="submit">Submit</button>
         </form>
     </section>
