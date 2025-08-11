@@ -9,6 +9,8 @@ const password = document.querySelector("#password");
 const passwordError = document.querySelector("#password + span.error");
 const passwordConfirm = document.querySelector("#passwordConfirm");
 const passwordConfirmError = document.querySelector("#passwordConfirm + span.error");
+const submitButton = document.querySelector("#submit");
+const submitMessage = document.querySelector("#submitMessage");
 
 email.addEventListener("input", (event)=>{
     if (!email.validity.valid){
@@ -91,9 +93,17 @@ const showPasswordError = () =>{
     }
 } 
 
-const showPasswordConfirmError = () =>{
+const showPasswordConfirmError = (password) =>{
     if (passwordConfirm.validity.valueMissing){
         passwordConfirmError.textContent = "Enter password again.";
     }
 }
 
+form.addEventListener("submit", (event)=> {
+    if (!email.validity.valid || !country.validity.valid || !postal.validity.valid || !password.validity.valid || !passwordConfirm.validity.valid){
+        event.preventDefault();
+    } else {
+        submitMessage.textContent = "Form Submitted!";
+    }
+    
+});
